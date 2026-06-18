@@ -12,9 +12,17 @@
         const lang = urlParams.get('lang') || 'en';
 
         const appsScriptUrl = `https://script.google.com/macros/s/AKfycbxYfO97cRhL1qJuS9JPEdQZwtIDnzIyUIwTRQEVdp6RQZcUgmQPbhLzxQ3mPQhSTcAQkw/exec?rating=${rating}&lang=${lang}`;
-        
-        const googleFormUrl = `https://docs.google.com/forms/d/e/.../viewform?entry.123=rating`;
 
+        const rating_to_url = {
+            "1": "https://forms.office.com/Pages/ResponsePage.aspx?id=DJ0Nj_fSaEWgA90lvpWHyse5-Pi8lz5Jihd46r8Ne8xUOElINEFKOFpaSDFWMDQzNzVYTklZTzhERy4u&r02af6f5f40244ff3a1adcbe4e041df78=%22%CE%A0%CE%BF%CE%BB%CF%8D%20%CE%B9%CE%BA%CE%B1%CE%BD%CE%BF%CF%80%CE%BF%CE%B9%CE%B7%CE%BC%CE%AD%CE%BD%CE%BF%CF%82%2F%CE%B7%22",
+            "2": "https://forms.office.com/Pages/ResponsePage.aspx?id=DJ0Nj_fSaEWgA90lvpWHyse5-Pi8lz5Jihd46r8Ne8xUOElINEFKOFpaSDFWMDQzNzVYTklZTzhERy4u&r02af6f5f40244ff3a1adcbe4e041df78=%22%CE%99%CE%BA%CE%B1%CE%BD%CE%BF%CF%80%CE%BF%CE%B9%CE%B7%CE%BC%CE%AD%CE%BD%CE%BF%CF%82%2F%CE%B7%22",
+            "3": "https://forms.office.com/Pages/ResponsePage.aspx?id=DJ0Nj_fSaEWgA90lvpWHyse5-Pi8lz5Jihd46r8Ne8xUOElINEFKOFpaSDFWMDQzNzVYTklZTzhERy4u&r02af6f5f40244ff3a1adcbe4e041df78=%22%CE%9F%CF%8D%CF%84%CE%B5%20%CE%B9%CE%BA%CE%B1%CE%BD%CE%BF%CF%80%CE%BF%CE%B9%CE%B7%CE%BC%CE%AD%CE%BD%CE%BF%CF%82%2F%CE%B7%20%CE%BF%CF%8D%CF%84%CE%B5%20%CE%BC%CE%B7%20%CE%B9%CE%BA%CE%B1%CE%BD%CE%BF%CF%80%CE%BF%CE%B9%CE%B7%CE%BC%CE%AD%CE%BD%CE%BF%CF%82%2F%CE%B7%22",
+            "4": "https://forms.office.com/Pages/ResponsePage.aspx?id=DJ0Nj_fSaEWgA90lvpWHyse5-Pi8lz5Jihd46r8Ne8xUOElINEFKOFpaSDFWMDQzNzVYTklZTzhERy4u&r02af6f5f40244ff3a1adcbe4e041df78=%22%CE%9B%CE%AF%CE%B3%CE%BF%20%CE%B4%CF%85%CF%83%CE%B1%CF%81%CE%B5%CF%83%CF%84%CE%B7%CE%BC%CE%AD%CE%BD%CE%BF%CF%82%2F%CE%B7%22",
+            "5": "https://forms.office.com/Pages/ResponsePage.aspx?id=DJ0Nj_fSaEWgA90lvpWHyse5-Pi8lz5Jihd46r8Ne8xUOElINEFKOFpaSDFWMDQzNzVYTklZTzhERy4u&r02af6f5f40244ff3a1adcbe4e041df78=%22%CE%A0%CE%BF%CE%BB%CF%8D%20%CE%B4%CF%85%CF%83%CE%B1%CF%81%CE%B5%CF%83%CF%84%CE%B7%CE%BC%CE%AD%CE%BD%CE%BF%CF%82%2F%CE%B7%22"
+        }
+
+        const googleFormUrl = rating_to_url[rating];
+        
         const timeout = setTimeout(() => {
             window.location.href = googleFormUrl;
         }, 2000);
